@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:fluentui_icons/fluentui_icons.dart';
+import 'package:youtube_clone_UI/models/user.dart';
 
-class AccountProfile extends StatefulWidget {
-  @override
-  _AccountProfileState createState() => _AccountProfileState();
-}
+class AccountProfile extends StatelessWidget {
+  final User currentUser;
 
-class _AccountProfileState extends State<AccountProfile> {
+  AccountProfile({this.currentUser});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,14 +30,14 @@ class _AccountProfileState extends State<AccountProfile> {
               child: Row(
                 children: [
                   CircleAvatar(
-                    backgroundImage: AssetImage("assets/account_image.jpg"),
+                    backgroundImage: currentUser.profileImage,
                     radius: 30.0,
                   ),
                   SizedBox(width: 15),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("#Ksav",
+                      Text(currentUser.username,
                           style: TextStyle(color: Colors.white, fontSize: 20)),
                       SizedBox(height: 5),
                       Text("ksav@gmail.com",

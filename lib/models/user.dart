@@ -4,8 +4,5 @@ class User {
   String username;
   AssetImage profileImage;
 
-  User({
-    this.username,
-    this.profileImage,
-  });
+  User({this.username, this.profileImage});
 }
